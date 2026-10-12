@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Service Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="brand">HS</div>
+    <h1>Home Service Booking</h1>
+    <p>Reliable help for your home, always on time.</p>
+</header>
+
+<main>
+    <section class="intro">
+        <h2>Book a Home Service</h2>
+        <p>Choose a service and request an appointment.</p>
+    </section>
+
+    <div class="layout">
+        <form id="bookingForm" class="panel">
+            <h3>Booking Details</h3>
+
+            <label for="name">Customer Name</label>
+            <input id="name" name="customerName" maxlength="100" required placeholder="Enter your name">
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" pattern="[0-9]{10,15}" required placeholder="Enter your phone number">
+
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+                <option value="">-- Choose a service --</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>AC Service & Repair</option>
+                <option>Home Cleaning</option>
+                <option>Carpenter</option>
+                <option>Painting Service</option>
+                <option>Pest Control</option>
+                <option>RO/Water Purifier Service</option>
+                <option>Refrigerator Repair</option>
+                <option>Car Washing</option>
+            </select>
+
+            <div class="two">
+                <div>
+                    <label for="date">Service Date</label>
+                    <!-- ✅ Corrected: proper date input -->
+                    <input id="date" name="date" type="date" required>
+                </div>
+                <div>
+                    <label for="time">Service Time</label>
+                    <!-- ✅ Added: proper time input -->
+                    <input id="time" name="time" type="time" required>
+                </div>
+            </div>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" maxlength="255" required placeholder="Enter your home address"></textarea>
+
+            <button id="submitBtn">Book Service</button>
+            <p id="message" role="status"></p>
+        </form>
+
+        <aside class="panel">
+            <h3>Our Services</h3>
+            <div class="services">
+                <div>⚡ Electrician</div>
+                <div>🔧 Plumber</div>
+                <div>❄️ AC Service & Repair</div>
+                <div>🧹 Home Cleaning</div>
+                <div>🪚 Carpenter</div>
+                <div>🎨 Painting Service</div>
+                <div>🐜 Pest Control</div>
+                <div>💧 RO/Water Purifier Service</div>
+                <div>🥶 Refrigerator Repair</div>
+                <div>🚗 Car Washing</div>
+            </div>
+        </aside>
+    </div>
+
+    <section class="panel">
+        <h3>All Bookings</h3>
+        <p>Saved records from MySQL</p>
+        <button id="refreshBtn">Refresh</button>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody id="bookingsBody"></tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>

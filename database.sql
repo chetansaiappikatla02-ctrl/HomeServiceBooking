@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS home_service_db;
+USE home_service_db;
+CREATE TABLE IF NOT EXISTS bookings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  booking_id VARCHAR(20) NOT NULL UNIQUE,
+  customer_name VARCHAR(100) NOT NULL,
+  phone VARCHAR(15) NOT NULL,
+  service VARCHAR(100) NOT NULL,
+  service_date DATE NOT NULL,
+  service_time TIME NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  status VARCHAR(30) NOT NULL DEFAULT 'Booked',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+SELECT * FROM bookings;
